@@ -1,17 +1,78 @@
 @import "susy";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700);
 
 $total-columns  : 12;             // a 12-column grid
-$column-width   : 4em;            // each column is 4em wide
+$column-width   : 5.5em;            // each column is 4em wide
 $gutter-width   : 1em;            // 1em gutters between columns
 $grid-padding   : $gutter-width;  // grid-padding equal to gutters
+$base-font      : 'Open Sans', sans-serif;
+$black          : #111;
+$darkergrey     : #171717;
+$darkgrey       : #252525;
 
+body {
+  font-family: $base-font;
+}
 
-.test {
-  margin-top: 15px;
-  .alfa {
-    margin-bottom: 20px;
+#page {
+
+  .container {
+    // page acts as a container for our grid.
+    @include container;
   }
-  .beta-gammades-truddelutt {
-    padding: 140px;
+
+  header {
+    width: 100%;
+    padding: 1em 0;
+    background: #f0f0f0;
+    .branding-left {
+      @include span-columns(3,12);
+      @include pre(1);
+      height: 3.5em;
+    }
+    .navigation {
+      height: 3.5em;
+      @include span-columns(5,12);
+      nav {
+        & > ul {
+          & > li {
+            margin-right: 20px;
+            &:last-child {
+              margin-right: 0;
+            }
+            & > a {
+              font-size: 0.9em;
+              font-weight: 600;
+              color: $black;
+              line-height: 3.5em;
+              vertical-align: middle;
+              height: 3.5;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    .branding-right {
+      @include span-columns(2 omega,12);
+      @include post(1);
+      text-align: right;
+    }
+  }
+
+  footer {
+    &.closure-bottom {
+
+    }
+  }
+
+
+
+  .twocolumns {
+    // sidebar spans 3 columns of total 12.
+    .sidebar { @include span-columns(3 omega,12); }
+
+    // content spans the final (omega) 9 columns of 12.
+    .content { @include span-columns(9,12); }
   }
 }

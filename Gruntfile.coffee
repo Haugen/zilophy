@@ -7,7 +7,7 @@ module.exports = (grunt) ->
         options:
           config: 'config.rb'
           sassDir: 'sass'
-          cssDir: 'stylesheets',
+          cssDir: 'css',
           outputStyle: 'expanded',
           environment: 'production'
       dev:
@@ -15,7 +15,7 @@ module.exports = (grunt) ->
           config: 'config.rb'
           sassDir: 'sass',
           outputStyle: 'expanded',
-          cssDir: 'stylesheets'
+          cssDir: 'css'
     sass:
       dist:
         options:

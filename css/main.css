@@ -1,0 +1,76 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700);
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+#page .container {
+  *zoom: 1;
+  max-width: 77em;
+  _width: 77em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+#page .container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#page header {
+  width: 100%;
+  padding: 1em 0;
+  background: #f0f0f0;
+}
+#page header .branding-left {
+  width: 24.02597%;
+  float: left;
+  margin-right: 1.2987%;
+  display: inline;
+  margin-left: 8.44156%;
+  height: 3.5em;
+}
+#page header .navigation {
+  height: 3.5em;
+  width: 40.90909%;
+  float: left;
+  margin-right: 1.2987%;
+  display: inline;
+}
+#page header .navigation nav > ul > li {
+  margin-right: 20px;
+}
+#page header .navigation nav > ul > li:last-child {
+  margin-right: 0;
+}
+#page header .navigation nav > ul > li > a {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #111111;
+  line-height: 3.5em;
+  vertical-align: middle;
+  height: 3.5;
+  display: block;
+}
+#page header .branding-right {
+  width: 15.58442%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+  margin-right: 8.44156%;
+  text-align: right;
+}
+#page .twocolumns .sidebar {
+  width: 24.02597%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+}
+#page .twocolumns .content {
+  width: 74.67532%;
+  float: left;
+  margin-right: 1.2987%;
+  display: inline;
+}
