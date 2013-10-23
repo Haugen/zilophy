@@ -18,6 +18,9 @@
 
       <?php if (!empty($content['nav'])): ?>
         <div class="navigation" role="navigation">
+          <button type="button" class="navigation-toggle">
+            <i class="icon icon-reorder"></i>
+          </button>
           <?php print render($content['nav']); ?>
         </div>
       <?php endif; ?>
@@ -28,28 +31,25 @@
         </div>
       <?php endif; ?>
     </div>
+    <?php if (!empty($content['subnav'])): ?>
+      <div class="sub-navigation" role="navigation">
+        <div class="container">
+          <?php print render($content['subnav']); ?>
+        </div>
+      </div>
+    <?php endif; ?>
   </header>
 
   <?php if (!empty($content['content_top'])): ?>
-    <div role="main_top" class="main-content-top">
-      <div class="container">
-        <?php print render($content['content_top']); ?>
-      </div>
+    <div role="content" class="content-top">
+      <?php print render($content['content_top']); ?>
     </div>
   <?php endif; ?>
 
   <?php if (!empty($content['content'])): ?>
-    <div role="main" class="main-content">
+    <div role="content" class="main-content">
       <div class="container">
         <?php print render($content['content']); ?>
-      </div>
-    </div>
-  <?php endif; ?>
-
-  <?php if (!empty($content['content_bottom'])): ?>
-    <div role="main_bottom" class="main-content-bottom">
-      <div class="container">
-        <?php print render($content['content_bottom']); ?>
       </div>
     </div>
   <?php endif; ?>
@@ -61,8 +61,9 @@
       </div>
     </footer>
   <?php endif; ?>
+
   <?php if (!empty($content['closure_bottom'])): ?>
-    <footer class="closure-bottom" role="footer_bottom">
+    <footer class="closure-bottom" role="footer">
       <div class="container">
         <?php print render($content['closure_bottom']); ?>
       </div>

@@ -1,42 +1,66 @@
 @import "susy";
+@import "compass/css3";
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700);
 
-$total-columns  : 12;             // a 12-column grid
-$column-width   : 5.5em;            // each column is 4em wide
-$gutter-width   : 1em;            // 1em gutters between columns
-$grid-padding   : $gutter-width;  // grid-padding equal to gutters
+$total-columns  : 4;             // a 12-column grid
+$column-width   : 80px;            // each column is 5.5em wide
+$gutter-width   : 15px;            // 1em gutters between columns
+$grid-padding   : 15px;  // grid-padding equal to gutters
 $base-font      : 'Open Sans', sans-serif;
-$black          : #111;
+
+$black          : #111111;
 $darkergrey     : #171717;
+$dark2darkergrey: #333333;
 $darkgrey       : #252525;
+$grey           : #444444;
+$lightgrey      : #e1e1e1;
+$ligthergrey    : #eeeeee;
+$white          : #ffffff;
+$font-size      : .9em;
 
 body {
   font-family: $base-font;
+  font-size: $font-size;
 }
 
-#page {
-
-  .container {
-    // page acts as a container for our grid.
+.container {
+  // page acts as a container for our grid.
+  @include container;
+  @include at-breakpoint(6) {
     @include container;
   }
+  @include at-breakpoint(8) {
+    @include container;
+  }
+  @include at-breakpoint(12) {
+    @include container;
+  }
+}
 
-  header {
-    width: 100%;
+header {
+  width: 100%;
+  background: $white;
+  z-index: 1;
+  position: relative;
+  & > .container {
     padding: 1em 0;
-    background: #f0f0f0;
     .branding-left {
-      @include span-columns(3,12);
-      @include pre(1);
+      @include span-columns(3, 12);
       height: 3.5em;
     }
     .navigation {
       height: 3.5em;
-      @include span-columns(5,12);
-      nav {
+      @include span-columns(5, 12);
+      .menu {
         & > ul {
+          margin: 0;
+          padding: 0;
           & > li {
-            margin-right: 20px;
+            float: left;
+            display: inline;
+            margin: 0 20px 0 0;
+            padding: 0;
             &:last-child {
               margin-right: 0;
             }
@@ -49,30 +73,77 @@ body {
               height: 3.5;
               display: block;
             }
+            & > ul {
+              display: none;
+            }
           }
         }
       }
     }
     .branding-right {
-      @include span-columns(2 omega,12);
-      @include post(1);
+      @include span-columns(3 omega, 12);
       text-align: right;
     }
   }
-
-  footer {
-    &.closure-bottom {
-
-    }
-  }
-
-
-
-  .twocolumns {
-    // sidebar spans 3 columns of total 12.
-    .sidebar { @include span-columns(3 omega,12); }
-
-    // content spans the final (omega) 9 columns of 12.
-    .content { @include span-columns(9,12); }
+  .sub-navigation {
+    display: none;
+    padding: 20px 0;
+    text-align: center;
+    @include background-image(linear-gradient(#f0f0f0, #d6d6d6));
+    @include box-shadow($lightgrey 0 0 2px);
+    @include box-shadow($lightgrey 0 0 2px);
   }
 }
+
+
+@include at-breakpoint(6) {
+  header {
+    .sub-navigation {
+      display: block;
+    }
+  }
+}
+
+
+
+
+.main-content {
+  background-color: $white;
+}
+
+footer {
+  &.closure {
+    background-color: $darkgrey;
+    color: $lightgrey;
+    padding: 60px 0;
+  }
+  &.closure-bottom {
+    background-color: $darkergrey;
+    color: $grey;
+    padding: 30px 0;
+    .container {
+      span:first-child {
+        font-size: 0.8em;
+        @include span-columns(9, 12);
+      }
+      span:last-child {
+        font-size: 0.8em;
+        @include span-columns(3 omega, 12);
+        text-align: right;
+      }
+    }
+  }
+}
+
+.twocolumns {
+  // sidebar spans 3 columns of total 12.
+  .sidebar {
+    @include span-columns(3 omega, 12);
+  }
+
+  // content spans the final (omega) 9 columns of 12.
+  .content {
+    @include span-columns(9, 12);
+  }
+}
+

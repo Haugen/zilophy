@@ -1,0 +1,7 @@
+{
+  "name": "konzilo kickstart",
+  "version": "0.1.0",
+  "dependencies": {
+    "font-awesome": "~3.2.1"
+  }
+}

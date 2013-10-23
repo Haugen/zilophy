@@ -18,5 +18,6 @@ $plugin = array(
     'closure' => t('Closure'),
     'closure_bottom' => t('Closure bottom'),
     'nav' => t('Navigation'),
+    'subnav' => t('Sub navigation'),
   ),
 );
