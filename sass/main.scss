@@ -1,6 +1,9 @@
 @import "susy";
 @import "compass/css3";
 
+$FontAwesomePath: '../components/font-awesome/font';
+@import '../components/font-awesome/scss/font-awesome.scss';
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700);
 
 $total-columns  : 4;             // a 12-column grid
@@ -14,10 +17,14 @@ $darkergrey     : #171717;
 $dark2darkergrey: #333333;
 $darkgrey       : #252525;
 $grey           : #444444;
+$brightgrey     : #d6d6d6;
 $lightgrey      : #e1e1e1;
 $ligthergrey    : #eeeeee;
+$allmostwhite    : #f0f0f0;
 $white          : #ffffff;
 $font-size      : .9em;
+$konziloGreen   : green;
+
 
 body {
   font-family: $base-font;
@@ -104,7 +111,18 @@ header {
   }
 }
 
-
+button.navigation-toggle {
+  float: right;
+  font-size: 1.5em;
+  padding: 5px 10px;
+  background-color: $ligthergrey;
+  color: $konziloGreen;
+  border: none;
+  &:hover {
+    background-color: $konziloGreen;
+    color: $white;
+  }
+}
 
 
 .main-content {
