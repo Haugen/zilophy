@@ -6,25 +6,28 @@ $FontAwesomePath: '../components/font-awesome/font';
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700);
 
-$total-columns  : 4;             // a 12-column grid
-$column-width   : 80px;            // each column is 5.5em wide
-$gutter-width   : 15px;            // 1em gutters between columns
-$grid-padding   : 15px;  // grid-padding equal to gutters
-$base-font      : 'Open Sans', sans-serif;
+$total-columns: 4;
+// a 12-column grid
+$column-width: 80px;
+// each column is 5.5em wide
+$gutter-width: 15px;
+// 1em gutters between columns
+$grid-padding: 15px;
+// grid-padding equal to gutters
+$base-font: 'Open Sans', sans-serif;
 
-$black          : #111111;
-$darkergrey     : #171717;
+$black: #111111;
+$darkergrey: #171717;
 $dark2darkergrey: #333333;
-$darkgrey       : #252525;
-$grey           : #444444;
-$brightgrey     : #d6d6d6;
-$lightgrey      : #e1e1e1;
-$ligthergrey    : #eeeeee;
-$allmostwhite    : #f0f0f0;
-$white          : #ffffff;
-$font-size      : .9em;
-$konziloGreen   : green;
-
+$darkgrey: #252525;
+$grey: #444444;
+$brightgrey: #d6d6d6;
+$lightgrey: #e1e1e1;
+$ligthergrey: #eeeeee;
+$allmostwhite: #f0f0f0;
+$white: #ffffff;
+$font-size: .9em;
+$konziloGreen: green;
 
 body {
   font-family: $base-font;
@@ -53,43 +56,64 @@ header {
   & > .container {
     padding: 1em 0;
     .branding-left {
-      @include span-columns(3, 12);
-      height: 3.5em;
+      margin-bottom: 5px;
     }
     .navigation {
-      height: 3.5em;
-      @include span-columns(5, 12);
+      &.collapsed {
+        display: none;
+      }
       .menu {
         & > ul {
           margin: 0;
           padding: 0;
           & > li {
-            float: left;
-            display: inline;
-            margin: 0 20px 0 0;
+            list-style-type: none;
+            list-style-image: none;
+            margin: 0;
             padding: 0;
-            &:last-child {
-              margin-right: 0;
-            }
             & > a {
+              padding: 15px 10px;
               font-size: 0.9em;
               font-weight: 600;
               color: $black;
-              line-height: 3.5em;
-              vertical-align: middle;
-              height: 3.5;
+              background-color: $lightgrey;
               display: block;
+              border-bottom: 1px solid $ligthergrey;
+              text-decoration: none;
+              &:hover {
+                background-color: $grey;
+                color: $white;
+              }
             }
             & > ul {
-              display: none;
+              display: block;
+              & > li {
+                list-style-type: none;
+                list-style-image: none;
+                margin: 0;
+                padding: 0;
+                & > a {
+                  padding: 15px 30px;
+                  font-size: 0.9em;
+                  font-weight: 600;
+                  color: $black;
+                  background-color: $ligthergrey;
+                  display: block;
+                  border-bottom: 1px solid $ligthergrey;
+                  text-decoration: none;
+                  &:hover {
+                    background-color: $grey;
+                    color: $white;
+                  }
+                }
+              }
             }
           }
         }
       }
     }
     .branding-right {
-      @include span-columns(3 omega, 12);
-      text-align: right;
+      display: none;
     }
   }
   .sub-navigation {
@@ -102,28 +126,77 @@ header {
   }
 }
 
-
-@include at-breakpoint(6) {
+@include at-breakpoint(8) {
   header {
     .sub-navigation {
       display: block;
+    }
+    button.navigation-toggle {
+      display: none;
+      margin-bottom: 10px;
+    }
+    & > .container {
+      padding: 1em 0;
+      .branding-left {
+        @include span-columns(3, 12);
+        height: 3.5em;
+      }
+      .navigation {
+        &.collapsed {
+          display: block;
+        }
+        height: 3.5em;
+        @include span-columns(5, 12);
+        .menu {
+          & > ul {
+            margin: 0;
+            padding: 0;
+            & > li {
+              float: left;
+              display: inline;
+              margin: 0 20px 0 0;
+              padding: 0;
+              &:last-child {
+                margin-right: 0;
+              }
+              & > a {
+                font-size: 0.9em;
+                font-weight: 600;
+                color: $black;
+                line-height: 3.5em;
+                vertical-align: middle;
+                height: 3.5;
+                display: block;
+              }
+              & > ul {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      .branding-right {
+        @include span-columns(3 omega, 12);
+        text-align: right;
+      }
     }
   }
 }
 
 button.navigation-toggle {
+  display: block;
   float: right;
   font-size: 1.5em;
   padding: 5px 10px;
   background-color: $ligthergrey;
   color: $konziloGreen;
-  border: none;
+  border: 7px solid $white;
   &:hover {
-    background-color: $konziloGreen;
+    background-color: $grey;
     color: $white;
+    border: 7px solid $ligthergrey;
   }
 }
-
 
 .main-content {
   background-color: $white;

@@ -9,6 +9,9 @@ base theme = mothership
 stylesheets[screen][] = css/screen.css
 stylesheets[screen][] = css/main.css
 
+; Javascripts
+scripts[] = js/navigation.toggle.js
+
 ; Stylesheets for exclusion
 ;stylesheets[all][] = modules/filter/filter.css
 ;stylesheets[all][] = modules/system/system.menus.css

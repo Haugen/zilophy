@@ -12,15 +12,15 @@
     <div class="container">
       <?php if (!empty($content['branding_left'])): ?>
         <div class="branding-left">
+          <button type="button" class="navigation-toggle">
+            <i class="icon icon-reorder"></i>
+          </button>
           <?php print render($content['branding_left']); ?>
         </div>
       <?php endif; ?>
 
       <?php if (!empty($content['nav'])): ?>
-        <div class="navigation" role="navigation">
-          <button type="button" class="navigation-toggle">
-            <i class="icon icon-reorder"></i>
-          </button>
+        <div class="navigation collapsed" role="navigation">
           <?php print render($content['nav']); ?>
         </div>
       <?php endif; ?>
