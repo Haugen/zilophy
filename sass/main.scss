@@ -1,62 +1,223 @@
 @import "susy";
 @import "compass/css3";
+@import "sassy-buttons";
 
 $FontAwesomePath: '../components/font-awesome/font';
 @import '../components/font-awesome/scss/font-awesome.scss';
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700);
 
-$total-columns: 4;
-// a 12-column grid
-$column-width: 80px;
-// each column is 5.5em wide
-$gutter-width: 15px;
-// 1em gutters between columns
-$grid-padding: 15px;
-// grid-padding equal to gutters
-$base-font: 'Open Sans', sans-serif;
+// Grid Variables
+$mobile:                  4;
+$tablet:                  6;
+$desktop:                 8;
+$desktop-large:           12;
 
-$black: #111111;
-$darkergrey: #171717;
-$dark2darkergrey: #333333;
-$darkgrey: #252525;
-$grey: #444444;
-$brightgrey: #d6d6d6;
-$lightgrey: #e1e1e1;
-$ligthergrey: #eeeeee;
-$allmostwhite: #f0f0f0;
-$white: #ffffff;
-$font-size: .9em;
-$konziloGreen: green;
+$total-columns:           $mobile;
+$column-width:            80px;
+$gutter-width:            15px;
+$grid-padding:            15px;
 
+// Font variables
+$base-font:               'Open Sans', sans-serif;
+$font-size:               .9em;
+$line-height-base:        1.428571429;
+$line-height-computed:    floor($font-size * $line-height-base);
+$headings-font-family:    $base-font;
+$headings-font-weight:    500;
+$headings-line-height:    1.1;
+
+// Color variables
+$black:                   #111111;
+$darkergrey:              #171717;
+$darkgrey:                #252525;
+$dark2darkergrey:         #333333;
+$grey:                    #444444;
+$somewhatbrightgrey:      #bbbbbb;
+$brightgrey:              #d6d6d6;
+$lightgrey:               #e1e1e1;
+$lightergrey:             #eeeeee;
+$allmostwhite:            #f0f0f0;
+$white:                   #ffffff;
+
+$kntntGreen:              #60AD5F;
+$kntntGreener:            #58A121;
+$kntntLight:              lighten($kntntGreen, 45%);
+$kntntGreenDark:          darken($kntntGreen, 20%);
+$kntntGreenDarker:        darken($kntntGreen, 20%);
+
+$kntntOrange:             #FF6E00;
+$kntntOrangeDark:         #B24D00;
+$kntntGrayDark:           #262626;
+$kntntDarker:             #161616;
+$kntntDark:               #232323;
+
+$blue:                    #6EC4D4;
+$blueDark:                $blue;
+$green:                   $kntntGreen;
+$grayLighter:             #D9D9D9;
+
+
+// Global styling
 body {
   font-family: $base-font;
   font-size: $font-size;
+  line-height: 1.5em;
 }
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  margin-bottom: ($line-height-computed / 2);
+}
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: ($line-height-computed / 2);
+}
+
+h1 { font-size: floor($font-size * 2.60); }
+h2 { font-size: floor($font-size * 2.15); }
+h3 { font-size: ceil($font-size * 1.70); }
+h4 { font-size: ceil($font-size * 1.25); }
+h5 { font-size: $font-size; }
+h6 { font-size: ceil($font-size * 0.85); }
+
+
 
 .container {
-  // page acts as a container for our grid.
+  // Default container styling
   @include container;
-  @include at-breakpoint(6) {
+  // Override at different breakpoints
+  @include at-breakpoint($tablet) {
     @include container;
   }
-  @include at-breakpoint(8) {
+  @include at-breakpoint($desktop) {
     @include container;
   }
-  @include at-breakpoint(12) {
+  @include at-breakpoint($desktop-large) {
     @include container;
   }
 }
 
+// LAYOUT SPECIFIC STYLING ************************
+
+// Layout Tablet
+@include at-breakpoint($tablet) {
+  header.branding {
+  }
+  .main-content {
+  }
+  footer.closure {
+  }
+  footer.closure-bottom {
+  }
+}
+
+// Layout Desktop
+@include at-breakpoint($desktop) {
+  header.branding {
+  }
+  .main-content {
+  }
+  footer.closure {
+  }
+  footer.closure-bottom {
+  }
+}
+
+// Layout Desktop Large
+@include at-breakpoint($desktop-large) {
+  header.branding {
+  }
+  .main-content {
+  }
+  footer.closure {
+  }
+  footer.closure-bottom {
+  }
+}
+
+
+
+.top-headline {
+  color: $somewhatbrightgrey;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.lead {
+  font-weight: bold;
+  font-size: 1.1em;
+  line-height: 1.1em;
+  margin-bottom: 10px;
+}
+.kicker {
+  display: inline-block;
+  padding: 2px 5px;
+  background: $somewhatbrightgrey;
+  margin-right: 5px;
+  border-radius: 2px;
+  color: $white;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.flexslider {
+  border: none;
+}
+.flex-direction-nav {
+  a {
+    color: $white;
+    padding-top: 10px;
+    height: 27px;
+  }
+}
+
+
+
+
+
+// MOBILE FIRST STYLING *******************
 header {
   width: 100%;
   background: $white;
   z-index: 1;
   position: relative;
+  box-shadow: 0 0 3px $grey;
   & > .container {
     padding: 1em 0;
     .branding-left {
       margin-bottom: 5px;
+      button.navigation-toggle {
+        display: block;
+        float: right;
+        font-size: 1.5em;
+        padding: 5px 10px;
+        background-color: $lightergrey;
+        color: $kntntGreen;
+        border: 7px solid $white;
+        &:hover {
+          background-color: $lightgrey;
+          color: $darkgrey;
+          border: 7px solid $lightergrey;
+        }
+      }
     }
     .navigation {
       &.collapsed {
@@ -78,10 +239,10 @@ header {
               color: $black;
               background-color: $lightgrey;
               display: block;
-              border-bottom: 1px solid $ligthergrey;
+              border-bottom: 1px solid $lightergrey;
               text-decoration: none;
               &:hover {
-                background-color: $grey;
+                background-color: $brightgrey;
                 color: $white;
               }
             }
@@ -97,12 +258,12 @@ header {
                   font-size: 0.9em;
                   font-weight: 600;
                   color: $black;
-                  background-color: $ligthergrey;
+                  background-color: $lightergrey;
                   display: block;
-                  border-bottom: 1px solid $ligthergrey;
+                  border-bottom: 1px solid $lightergrey;
                   text-decoration: none;
                   &:hover {
-                    background-color: $grey;
+                    background-color: $brightgrey;
                     color: $white;
                   }
                 }
@@ -112,6 +273,7 @@ header {
         }
       }
     }
+    // DO NOT DISPLAY SEARCH IN MOBILE FOR NOW
     .branding-right {
       display: none;
     }
@@ -126,7 +288,69 @@ header {
   }
 }
 
-@include at-breakpoint(8) {
+
+.main-content {
+  background-color: $white;
+  margin-bottom: 15px;
+}
+
+
+
+footer {
+  &.closure {
+    background-color: $darkgrey;
+    color: $lightgrey;
+    padding: 30px 0;
+    .container {
+      text-align: center;
+    }
+  }
+  &.closure-bottom {
+    background-color: $darkergrey;
+    color: $grey;
+    padding: 30px 0;
+    .container {
+      span {
+        display: block;
+        font-size: 0.8em;
+        text-align: center;
+        &:first-child {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+@include at-breakpoint($desktop) {
+  footer {
+    &.closure {
+      background-color: $darkgrey;
+      color: $lightgrey;
+      padding: 60px 0;
+    }
+    &.closure-bottom {
+      background-color: $darkergrey;
+      color: $grey;
+      padding: 30px 0;
+      .container {
+        span:first-child {
+          font-size: 0.8em;
+          @include span-columns(9, 12);
+        }
+        span:last-child {
+          font-size: 0.8em;
+          @include span-columns(3 omega, 12);
+          text-align: right;
+        }
+      }
+    }
+  }
+
+}
+
+
+  @include at-breakpoint(8) {
   header {
     .sub-navigation {
       display: block;
@@ -183,48 +407,24 @@ header {
   }
 }
 
-button.navigation-toggle {
-  display: block;
-  float: right;
-  font-size: 1.5em;
-  padding: 5px 10px;
-  background-color: $ligthergrey;
-  color: $konziloGreen;
-  border: 7px solid $white;
-  &:hover {
-    background-color: $grey;
-    color: $white;
-    border: 7px solid $ligthergrey;
-  }
-}
 
-.main-content {
-  background-color: $white;
-}
 
-footer {
-  &.closure {
-    background-color: $darkgrey;
-    color: $lightgrey;
-    padding: 60px 0;
-  }
-  &.closure-bottom {
-    background-color: $darkergrey;
-    color: $grey;
-    padding: 30px 0;
-    .container {
-      span:first-child {
-        font-size: 0.8em;
-        @include span-columns(9, 12);
+ul.tabs {
+  li {
+    padding: 0;
+    &.active {
+      a {
+        border-bottom: 1px solid #07607a;
       }
-      span:last-child {
-        font-size: 0.8em;
-        @include span-columns(3 omega, 12);
-        text-align: right;
-      }
+    }
+    a {
+      @include sassy-button("glass", 5px, 14px, $kntntGreen, $kntntGreener);
+      border-radius: 5px 5px 0 0;
+      padding: 0.2em 0.5em;
     }
   }
 }
+
 
 .twocolumns {
   // sidebar spans 3 columns of total 12.

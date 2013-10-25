@@ -7,10 +7,14 @@ base theme = mothership
 
 ; Stylesheets
 stylesheets[screen][] = css/screen.css
+stylesheets[screen][] = ../../libraries/flexslider/flexslider.css
 stylesheets[screen][] = css/main.css
 
 ; Javascripts
+scripts[] = ../../libraries/flexslider/jquery.flexslider.js
+scripts[] = js/zilophy.flexslider.js
 scripts[] = js/navigation.toggle.js
+
 
 ; Stylesheets for exclusion
 ;stylesheets[all][] = modules/filter/filter.css

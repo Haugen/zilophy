@@ -9,7 +9,9 @@
 <div id="page">
 
   <header class="branding" role="banner">
+
     <div class="container">
+
       <?php if (!empty($content['branding_left'])): ?>
         <div class="branding-left">
           <button type="button" class="navigation-toggle">
