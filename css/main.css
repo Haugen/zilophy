@@ -2015,6 +2015,9 @@ h6 {
   border: none;
 }
 
+.flex-direction-nav {
+  display: none;
+}
 .flex-direction-nav a {
   color: white;
   padding-top: 10px;
