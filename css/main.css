@@ -1986,6 +1986,114 @@ h6 {
   }
 }
 
+.content-top .field.field-type-file {
+  position: relative;
+}
+.content-top .field.field-type-file .main-content {
+  margin-bottom: 30px;
+}
+.content-top .field.field-type-file .main-content .file-display img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.content-top .field.field-type-file .inline-text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0.7;
+  color: white;
+  background: #111111;
+  border-radius: 3px 0 0 3px;
+}
+.content-top .field.field-type-file .inline-text > div {
+  padding: 10px;
+  background: #111111;
+  border-radius: 3px 0 0 3px;
+  float: left;
+}
+.content-top .field.field-type-file .inline-text > div:first-child {
+  margin-right: 5px;
+}
+
+.author-content {
+  border-top: 1px solid #d6d6d6;
+  padding-top: 30px;
+  margin-top: 30px;
+  border-bottom: 1px solid #d6d6d6;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+.author-content .image {
+  margin-bottom: 30px;
+}
+.author-content .image img {
+  width: 100%;
+  border-radius: 100%;
+}
+.author-content .description {
+  color: #111111;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.author-content .description .field-type-text-long {
+  font-weight: normal;
+  color: #797979;
+}
+.author-content .publishinfo {
+  font-size: 0.9em;
+}
+.author-content .publishinfo h2 {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+@media (min-width: 555px) {
+  .author-content {
+    overflow: hidden;
+    border-top: 1px solid #d6d6d6;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-bottom: 1px solid #d6d6d6;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+  .author-content .image {
+    float: left;
+    width: 12%;
+    margin-right: 2%;
+    margin-bottom: 0;
+  }
+  .author-content .image img {
+    width: 100%;
+    border-radius: 100%;
+  }
+  .author-content .description {
+    float: left;
+    width: 60%;
+    padding: 0 3%;
+    color: #111111;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  .author-content .description .field-type-text-long {
+    color: #797979;
+    font-weight: normal;
+  }
+  .author-content .publishinfo {
+    float: left;
+    width: 20%;
+    font-size: 0.9em;
+  }
+  .author-content .publishinfo h2 {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+}
 .top-headline {
   color: #bbbbbb;
   font-size: 0.9em;
@@ -2123,13 +2231,13 @@ header .sub-navigation {
 
 .main-content {
   background-color: white;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
 }
 
 footer.closure {
   background-color: #252525;
   color: #e1e1e1;
-  padding: 30px 0;
+  padding: 50px 0;
 }
 footer.closure .container {
   text-align: center;

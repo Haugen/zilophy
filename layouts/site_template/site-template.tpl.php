@@ -50,9 +50,7 @@
 
   <?php if (!empty($content['content'])): ?>
     <div role="content" class="main-content">
-      <div class="container">
-        <?php print render($content['content']); ?>
-      </div>
+      <?php print render($content['content']); ?>
     </div>
   <?php endif; ?>
 
