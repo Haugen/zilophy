@@ -428,6 +428,13 @@ footer {
         &:first-child {
           margin-bottom: 5px;
         }
+        &:nth-child(2) {
+          white-space: nowrap;
+        }
+        a {
+          color: $lightgrey;
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -461,14 +468,18 @@ footer {
 }
 
 
-@include at-breakpoint(8) {
+@include at-breakpoint($desktop) {
   header {
     .sub-navigation {
       display: block;
     }
-    button.navigation-toggle {
-      display: none;
-      margin-bottom: 10px;
+    & > .container {
+      .branding-left {
+        button.navigation-toggle {
+          display: none;
+          margin-bottom: 10px;
+        }
+      }
     }
     & > .container {
       padding: 1em 0;
@@ -481,7 +492,7 @@ footer {
           display: block;
         }
         height: 3.5em;
-        @include span-columns(5, 12);
+        @include span-columns(8, 12);
         .menu {
           & > ul {
             margin: 0;
@@ -497,11 +508,16 @@ footer {
               & > a {
                 font-size: 0.9em;
                 font-weight: 600;
-                color: $black;
-                line-height: 3.5em;
-                vertical-align: middle;
-                height: 3.5;
+                color: $darkergrey;
+                line-height: 1em;                
+                padding: 1.75em 0.5em;
+                border: none;
                 display: block;
+                background: none;
+                &:hover {
+                  background: none;
+                  color: $black;
+                }
               }
               & > ul {
                 display: none;
@@ -511,7 +527,7 @@ footer {
         }
       }
       .branding-right {
-        @include span-columns(3 omega, 12);
+        @include span-columns(1 omega, 12);
         text-align: right;
       }
     }
