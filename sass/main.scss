@@ -98,7 +98,13 @@ h4 { font-size: ceil($font-size * 1.25); }
 h5 { font-size: $font-size; }
 h6 { font-size: ceil($font-size * 0.85); }
 
+p {
+  margin-bottom: 10px;
+}
 
+strong {
+  font-weight: bold;
+}
 
 .container {
   // Default container styling
@@ -445,20 +451,96 @@ footer {
     &.closure {
       background-color: $darkgrey;
       color: $lightgrey;
-      padding: 60px 0;
+      padding: 60px 0 50px 0;
+
+      .footer-container {
+        .logo {
+          img {
+            width: 220px;
+            margin: 10px 0;
+          }
+        }
+        .group {
+          @include span-columns(6, 12);
+          &:nth-child(2) {
+            @include span-columns(6 omega, 12);
+          }
+          .footer-info {
+            a {
+              color: $white;
+              text-decoration: underline;
+            }
+            text-align: left;
+            @include span-columns(6, 12);
+            &:nth-child(2) {
+              @include span-columns(6 omega, 12);
+            }
+            &.contact {
+              @include span-columns(4, 12);
+            }
+            &.socialmedia {
+              @include span-columns(8 omega, 12);            
+            }
+          }
+        }
+
+        .address, .contact, .socialmedia {
+          padding-top: 20px;
+        }
+        .socialmedia {
+          ul {
+            padding: 0;
+            margin: 5px 0 0 0;
+            list-style-type: none;
+            li {
+              display: inline;
+              padding-right: 10px;
+              margin-bottom: 5px;
+              a {
+                font-size: 24pt;
+                text-decoration: none;
+                background: $white;
+                border-radius: 100%;
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                padding-top: 0;
+                margin-bottom: 5px;
+                &:hover {
+                  background: $kntntGreen;
+                  i {
+                    color: $white;
+                  }
+                }
+                i {
+                  display: block;
+                  padding-top: 8px;
+                  text-align: center;
+                  color: $grey;
+                }
+                span {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
     }
     &.closure-bottom {
       background-color: $darkergrey;
       color: $grey;
-      padding: 30px 0;
-      .container {
+      padding: 30px 0 20px 0;
+      .footer-bottom-container {
         span:first-child {
+          text-align: left;
           font-size: 0.8em;
-          @include span-columns(9, 12);
+          @include span-columns(8, 12);
         }
         span:last-child {
           font-size: 0.8em;
-          @include span-columns(3 omega, 12);
+          @include span-columns(4 omega, 12);
           text-align: right;
         }
       }
