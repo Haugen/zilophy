@@ -1873,6 +1873,19 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
   content: "\f18b";
 }
 
+a {
+  color: #6ec4d4;
+}
+a:hover {
+  color: #ff6e00;
+}
+a:active {
+  color: #b24d00;
+}
+a:visited {
+  color: #6ec4d4;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 0.9em;
@@ -1906,19 +1919,19 @@ h6 {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.34em;
 }
 
 h2 {
-  font-size: 1em;
+  font-size: 1.935em;
 }
 
 h3 {
-  font-size: 2em;
+  font-size: 1.53em;
 }
 
 h4 {
-  font-size: 2em;
+  font-size: 1.125em;
 }
 
 h5 {
@@ -1926,7 +1939,7 @@ h5 {
 }
 
 h6 {
-  font-size: 1em;
+  font-size: 0.765em;
 }
 
 p {
@@ -1994,18 +2007,22 @@ strong {
   }
 }
 
-.content-top .field.field-type-file {
+.content-top .field.field-type-file,
+.content .views-field.views-field-field-konzilo-file {
   position: relative;
 }
-.content-top .field.field-type-file .main-content {
+.content-top .field.field-type-file .main-content,
+.content .views-field.views-field-field-konzilo-file .main-content {
   margin-bottom: 30px;
 }
-.content-top .field.field-type-file .main-content .file-display img {
+.content-top .field.field-type-file .main-content .file-display img,
+.content .views-field.views-field-field-konzilo-file .main-content .file-display img {
   width: 100%;
   height: auto;
   display: block;
 }
-.content-top .field.field-type-file .inline-text {
+.content-top .field.field-type-file .inline-text,
+.content .views-field.views-field-field-konzilo-file .inline-text {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -2014,13 +2031,15 @@ strong {
   background: #111111;
   border-radius: 3px 0 0 3px;
 }
-.content-top .field.field-type-file .inline-text > div {
+.content-top .field.field-type-file .inline-text > div,
+.content .views-field.views-field-field-konzilo-file .inline-text > div {
   padding: 10px;
   background: #111111;
   border-radius: 3px 0 0 3px;
   float: left;
 }
-.content-top .field.field-type-file .inline-text > div:first-child {
+.content-top .field.field-type-file .inline-text > div:first-child,
+.content .views-field.views-field-field-konzilo-file .inline-text > div:first-child {
   margin-right: 5px;
 }
 
@@ -2045,7 +2064,7 @@ strong {
   font-weight: bold;
   margin-bottom: 30px;
 }
-.author-content .description .field-type-text-long {
+.author-content .description .field-type-text-with-summary {
   font-weight: normal;
   color: #797979;
 }
@@ -2102,6 +2121,11 @@ strong {
     margin-bottom: 0;
   }
 }
+.author-date {
+  color: #bbbbbb;
+  margin-bottom: 20px;
+}
+
 .top-headline {
   color: #bbbbbb;
   font-size: 0.9em;
@@ -2513,4 +2537,14 @@ ul.tabs li a::-moz-focus-inner {
   float: left;
   margin-right: 1.33333%;
   display: inline;
+}
+
+.article-list > div {
+  margin-bottom: 30px;
+}
+.article-list h2.title {
+  margin-bottom: 5px;
+}
+.article-list .views-field.views-field-field-konzilo-file .main-content {
+  margin-bottom: 10px;
 }

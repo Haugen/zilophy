@@ -58,6 +58,21 @@ $blueDark:                $blue;
 $green:                   $kntntGreen;
 $grayLighter:             #D9D9D9;
 
+$link-color:              $blue;
+$link-hover-color:        $kntntOrange;
+$link-active-color:       $kntntOrangeDark;
+$link-visited-color:      $link-color;
+
+a {
+  color: $link-color;
+  &:hover { color: $link-hover-color; }
+  &:active { color: $link-active-color; }
+  &:visited { color: $link-visited-color; }
+}
+
+
+
+
 
 // Global styling
 body {
@@ -91,12 +106,12 @@ h6 {
   margin-bottom: ($line-height-computed / 2);
 }
 
-h1 { font-size: floor($font-size * 2.60); }
-h2 { font-size: floor($font-size * 2.15); }
-h3 { font-size: ceil($font-size * 1.70); }
-h4 { font-size: ceil($font-size * 1.25); }
+h1 { font-size: $font-size * 2.60; }
+h2 { font-size: $font-size * 2.15; }
+h3 { font-size: $font-size * 1.70; }
+h4 { font-size: $font-size * 1.25; }
 h5 { font-size: $font-size; }
-h6 { font-size: ceil($font-size * 0.85); }
+h6 { font-size: $font-size * 0.85; }
 
 p {
   margin-bottom: 10px;
@@ -159,7 +174,10 @@ strong {
   }
 }
 
-.content-top .field.field-type-file {
+
+// Images and image credit and description
+.content-top .field.field-type-file,
+.content .views-field.views-field-field-konzilo-file {
    position: relative;
    .main-content {
      margin-bottom: 30px;
@@ -210,7 +228,7 @@ strong {
     font-size: 0.9em;
     font-weight: bold;
     margin-bottom: 30px;
-    .field-type-text-long {
+    .field-type-text-with-summary {
       font-weight: normal;
       color: $alittlegrey;
     }
@@ -270,6 +288,10 @@ strong {
   }  
 }
 
+.author-date {
+  color: $somewhatbrightgrey;
+  margin-bottom: 20px;
+}
 
 .top-headline {
   color: $somewhatbrightgrey;
@@ -651,3 +673,16 @@ ul.tabs {
   }
 }
 
+.article-list {
+  & > div {
+    margin-bottom: 30px;
+  }
+  h2.title {
+    margin-bottom: 5px;
+  }
+  .views-field.views-field-field-konzilo-file {
+    .main-content {
+      margin-bottom: 10px;
+    }
+  }
+}
