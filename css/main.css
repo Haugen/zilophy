@@ -2291,6 +2291,9 @@ footer.closure-bottom .container span a {
     float: right;
     margin-right: 0;
   }
+  footer.closure .footer-container .group .address a, footer.closure .footer-container .group .contact a {
+    text-decoration: underline;
+  }
   footer.closure .footer-container .group .footer-info {
     text-align: left;
     width: 49.33333%;
@@ -2299,7 +2302,6 @@ footer.closure-bottom .container span a {
   }
   footer.closure .footer-container .group .footer-info a {
     color: white;
-    text-decoration: underline;
   }
   footer.closure .footer-container .group .footer-info:nth-child(2) {
     width: 49.33333%;

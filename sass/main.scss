@@ -465,10 +465,14 @@ footer {
           &:nth-child(2) {
             @include span-columns(6 omega, 12);
           }
+          .address, .contact {
+            a {
+              text-decoration: underline;
+            }
+          }
           .footer-info {
             a {
               color: $white;
-              text-decoration: underline;
             }
             text-align: left;
             @include span-columns(6, 12);
