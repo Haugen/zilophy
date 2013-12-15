@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700);
-/*!
+/*
  *  Font Awesome 3.2.1
  *  the iconic font designed for Bootstrap
  *  ------------------------------------------------------------------------------
@@ -112,7 +112,7 @@ a [class*=" icon-"] {
 
 .icon-border {
   border: solid 1px #eeeeee;
-  padding: .2em .25em .15em;
+  padding: 0.2em 0.25em 0.15em;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -1890,6 +1890,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 0.9em;
   line-height: 1.5em;
+  background-color: #f5f5f5;
 }
 
 img {
@@ -1902,6 +1903,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
   line-height: 1.1;
+}
+h1 a, h1 a:visited, h2 a, h2 a:visited, h3 a, h3 a:visited, h4 a, h4 a:visited, h5 a, h5 a:visited, h6 a, h6 a:visited {
+  color: #111111;
 }
 
 h1,
@@ -1992,9 +1996,9 @@ strong {
     clear: both;
   }
 }
-@media (min-width: 1125px) {
+@media (min-width: 935px) {
   .container {
-    max-width: 1125px;
+    max-width: 935px;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: auto;
@@ -2007,22 +2011,18 @@ strong {
   }
 }
 
-.content-top .field.field-type-file,
-.content .views-field.views-field-field-konzilo-file {
+.content-inline-text {
   position: relative;
 }
-.content-top .field.field-type-file .main-content,
-.content .views-field.views-field-field-konzilo-file .main-content {
+.content-inline-text .main {
   margin-bottom: 30px;
 }
-.content-top .field.field-type-file .main-content .file-display img,
-.content .views-field.views-field-field-konzilo-file .main-content .file-display img {
+.content-inline-text .main .file-display img {
   width: 100%;
   height: auto;
   display: block;
 }
-.content-top .field.field-type-file .inline-text,
-.content .views-field.views-field-field-konzilo-file .inline-text {
+.content-inline-text .inline-text {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -2031,15 +2031,13 @@ strong {
   background: #111111;
   border-radius: 3px 0 0 3px;
 }
-.content-top .field.field-type-file .inline-text > div,
-.content .views-field.views-field-field-konzilo-file .inline-text > div {
+.content-inline-text .inline-text > div {
   padding: 10px;
   background: #111111;
   border-radius: 3px 0 0 3px;
-  float: left;
+  flota1: left;
 }
-.content-top .field.field-type-file .inline-text > div:first-child,
-.content .views-field.views-field-field-konzilo-file .inline-text > div:first-child {
+.content-inline-text .inline-text > div:first-child {
   margin-right: 5px;
 }
 
@@ -2075,6 +2073,12 @@ strong {
   font-size: 0.9em;
   font-weight: bold;
   margin-bottom: 0;
+}
+
+article.content {
+  background: white;
+  box-shadow: 0 0 5px #e1e1e1;
+  padding: 10px;
 }
 
 @media (min-width: 555px) {
@@ -2169,7 +2173,7 @@ header {
   background: white;
   z-index: 1;
   position: relative;
-  box-shadow: 0 0 3px #444444;
+  box-shadow: 0 0 3px #e1e1e1;
 }
 header > .container {
   padding: 1em 0;
@@ -2262,7 +2266,7 @@ header .sub-navigation {
 }
 
 .main-content {
-  background-color: white;
+  padding-top: 5px;
   margin-bottom: 50px;
 }
 
@@ -2465,46 +2469,99 @@ footer.closure-bottom .container span a {
     text-align: right;
   }
 }
+ul.tabs {
+  border: none;
+  margin-bottom: 10px;
+}
+ul.tabs.primary {
+  padding: 0;
+}
 ul.tabs li {
   padding: 0;
 }
 ul.tabs li.active a {
-  border-bottom: 1px solid #07607a;
-}
-ul.tabs li a {
-  font-size: 14px;
+  font-size: 12px;
   padding: 0.5em 1.5em;
   display: inline-block;
   cursor: pointer;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF60AD5F', endColorstr='#FF396E38');
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #7bbb7a), color-stop(51%, #60ad5f));
-  background: -webkit-linear-gradient(#7bbb7a 50%, #60ad5f 51%);
-  background: -moz-linear-gradient(#7bbb7a 50%, #60ad5f 51%);
-  background: -o-linear-gradient(#7bbb7a 50%, #60ad5f 51%);
-  background: linear-gradient(#7bbb7a 50%, #60ad5f 51%);
-  -webkit-box-shadow: #add5ad 0 1px 0 inset;
-  -moz-box-shadow: #add5ad 0 1px 0 inset;
-  box-shadow: #add5ad 0 1px 0 inset;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #60ad5f), color-stop(100%, #58a121));
+  background: -webkit-linear-gradient(#60ad5f, #58a121);
+  background: -moz-linear-gradient(#60ad5f, #58a121);
+  background: -o-linear-gradient(#60ad5f, #58a121);
+  background: linear-gradient(#60ad5f, #58a121);
+  -webkit-box-shadow: #92c792 0 1px 0 inset;
+  -moz-box-shadow: #92c792 0 1px 0 inset;
+  box-shadow: #92c792 0 1px 0 inset;
   border: 1px solid #4c8c1d;
   color: white;
-  text-shadow: #315f31 0 -1px 0;
-  border-radius: 5px 5px 0 0;
-  padding: 0.2em 0.5em;
+  text-shadow: #2e582d 0 -1px 0;
+}
+ul.tabs li.active a:hover {
+  text-decoration: none;
+}
+ul.tabs li.active a:hover {
+  background-color: #4c8c1d;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #53a052), color-stop(100%, #4c8c1d));
+  background: -webkit-linear-gradient(#53a052, #4c8c1d);
+  background: -moz-linear-gradient(#53a052, #4c8c1d);
+  background: -o-linear-gradient(#53a052, #4c8c1d);
+  background: linear-gradient(#53a052, #4c8c1d);
+}
+ul.tabs li.active a:active {
+  -webkit-box-shadow: #457f1a 0 1px 2px inset;
+  -moz-box-shadow: #457f1a 0 1px 2px inset;
+  box-shadow: #457f1a 0 1px 2px inset;
+}
+ul.tabs li.active a.disabled, ul.tabs li.active a[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #58a121;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+ul.tabs li.active a::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+ul.tabs li a {
+  font-size: 12px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF60AD5F', endColorstr='#FF396E38');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #60ad5f), color-stop(100%, #58a121));
+  background: -webkit-linear-gradient(#60ad5f, #58a121);
+  background: -moz-linear-gradient(#60ad5f, #58a121);
+  background: -o-linear-gradient(#60ad5f, #58a121);
+  background: linear-gradient(#60ad5f, #58a121);
+  -webkit-box-shadow: #92c792 0 1px 0 inset;
+  -moz-box-shadow: #92c792 0 1px 0 inset;
+  box-shadow: #92c792 0 1px 0 inset;
+  border: 1px solid #4c8c1d;
+  color: white;
+  text-shadow: #2e582d 0 -1px 0;
 }
 ul.tabs li a:hover {
   text-decoration: none;
 }
 ul.tabs li a:hover {
-  background-color: #48831b;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #63af62), color-stop(51%, #48831b));
-  background: -webkit-linear-gradient(#63af62 50%, #48831b 51%);
-  background: -moz-linear-gradient(#63af62 50%, #48831b 51%);
-  background: -o-linear-gradient(#63af62 50%, #48831b 51%);
-  background: linear-gradient(#63af62 50%, #48831b 51%);
+  background-color: #4c8c1d;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #53a052), color-stop(100%, #4c8c1d));
+  background: -webkit-linear-gradient(#53a052, #4c8c1d);
+  background: -moz-linear-gradient(#53a052, #4c8c1d);
+  background: -o-linear-gradient(#53a052, #4c8c1d);
+  background: linear-gradient(#53a052, #4c8c1d);
 }
 ul.tabs li a:active {
   -webkit-box-shadow: #457f1a 0 1px 2px inset;
@@ -2523,6 +2580,14 @@ ul.tabs li a.disabled, ul.tabs li a[disabled] {
 ul.tabs li a::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
+}
+
+.field-name-field-konzilo-lead {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.1em;
+  letter-spacing: 2px;
 }
 
 .twocolumns .sidebar {
@@ -2545,6 +2610,12 @@ ul.tabs li a::-moz-focus-inner {
 .article-list h2.title {
   margin-bottom: 5px;
 }
-.article-list .views-field.views-field-field-konzilo-file .main-content {
+
+.item {
+  background: white;
+  box-shadow: 0 0 5px #e1e1e1;
+  padding: 10px;
+}
+.item .content-inline-text {
   margin-bottom: 10px;
 }

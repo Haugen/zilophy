@@ -22,16 +22,18 @@
   }
   if (!empty($wrapper)) print implode(' ', $wrapper) . '>';
 ?>
+<article class="content">
 <?php if (!empty($content['content_top'])) : ?>
   <div class="content-top">
     <?php print $content['content_top']; ?>
   </div>
 <?php endif; ?>
 <?php if (!empty($content['content'])) : ?>
-  <div class="content container">
+  <div class="content">
     <?php print $content['content']; ?>
   </div>
 <?php endif; ?>
+</article>
 <?php
   if (!empty($class) || !empty($css_id)) {
     print '</div>';

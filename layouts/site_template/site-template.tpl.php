@@ -49,7 +49,7 @@
   <?php endif; ?>
 
   <?php if (!empty($content['content'])): ?>
-    <div role="content" class="main-content">
+    <div role="content" class="main-content container">
       <?php print render($content['content']); ?>
     </div>
   <?php endif; ?>

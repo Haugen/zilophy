@@ -22,8 +22,9 @@
   }
   if (!empty($wrapper)) print implode(' ', $wrapper) . '>';
 ?>
+<div class="content-inline-text">
 <?php if (!empty($content['main'])) : ?>
-  <div class="main-content">
+  <div class="main">
     <?php print $content['main']; ?>
   </div>
 <?php endif; ?>
@@ -32,6 +33,7 @@
     <?php print $content['inlinetext']; ?>
   </div>
 <?php endif; ?>
+</div>
 <?php
   if (!empty($class) || !empty($css_id)) {
     print '</div>';
