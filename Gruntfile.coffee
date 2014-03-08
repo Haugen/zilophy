@@ -2,33 +2,18 @@ module.exports = (grunt) ->
   # Project configuration.
   grunt.initConfig
     pkg: grunt.file.readJSON('package.json')
-    compass:
-      dist:
+
+    less:
+      development:
         options:
-          config: 'config.rb'
-          sassDir: 'sass'
-          cssDir: 'css',
-          outputStyle: 'expanded',
-          environment: 'production'
-      dev:
-        options:
-          config: 'config.rb'
-          sassDir: 'sass',
-          outputStyle: 'expanded',
-          cssDir: 'css'
-    sass:
-      dist:
-        options:
-          style: 'expanded'
+          paths: ["bower_components/bootstrap/less", "less"]
         files:
-          "stylesheets/main.css": "sass/main.scss"
+          "css/main.css": "less/main.less"
     watch:
       scripts:
-        files: [
-          'sass/*.scss'
-          ]
-        tasks: ['compass']
+        files: ['less/*.less']
+        tasks: ['less']
 
-  grunt.loadNpmTasks 'grunt-contrib-sass'
+  grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-watch'
-  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.registerTask('default', ['less'])

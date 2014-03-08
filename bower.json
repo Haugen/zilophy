@@ -1,7 +1,8 @@
 {
-  "name": "konzilo kickstart",
+  "name": "Zilophy theme",
   "version": "0.1.0",
   "dependencies": {
-    "font-awesome": "~3.2.1"
+    "font-awesome": "~3.2.1",
+    "bootstrap": "~3.0.0"
   }
 }

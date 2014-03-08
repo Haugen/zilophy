@@ -3,8 +3,6 @@ description = Basic theme utilizing HTML5 and responsive layout.
 core = 7.x
 engine = phptemplate
 
-base theme = mothership
-
 ; Stylesheets
 stylesheets[screen][] = css/screen.css
 stylesheets[screen][] = ../../libraries/flexslider/flexslider.css
@@ -13,8 +11,6 @@ stylesheets[screen][] = css/main.css
 ; Javascripts
 scripts[] = ../../libraries/flexslider/jquery.flexslider.js
 scripts[] = js/zilophy.flexslider.js
-scripts[] = js/navigation.toggle.js
-
 
 ; Stylesheets for exclusion
 ;stylesheets[all][] = modules/filter/filter.css

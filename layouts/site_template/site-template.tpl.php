@@ -7,28 +7,22 @@
 ?>
 
 <div id="page">
-
-  <header class="branding" role="banner">
-
-    <div class="container">
-
+  <header role="banner">
+    <nav class="navbar navbar-fixed-top navbar-default">
+      <div class="container">
       <?php if (!empty($content['branding_left'])): ?>
-        <div class="branding-left">
-          <button type="button" class="navigation-toggle">
-            <i class="icon icon-reorder"></i>
-          </button>
+        <div class="navbar-header">
           <?php print render($content['branding_left']); ?>
         </div>
       <?php endif; ?>
-
       <?php if (!empty($content['nav'])): ?>
-        <div class="navigation collapsed" role="navigation">
+        <div class="collapse navbar-collapse navigation-left" role="navigation">
           <?php print render($content['nav']); ?>
         </div>
       <?php endif; ?>
 
       <?php if (!empty($content['branding_right'])): ?>
-        <div class="branding-right">
+        <div class="navbar-right">
           <?php print render($content['branding_right']); ?>
         </div>
       <?php endif; ?>
@@ -39,24 +33,27 @@
           <?php print render($content['subnav']); ?>
         </div>
       </div>
-    <?php endif; ?>
+<?php endif; ?>
+  </div>
   </header>
 
   <?php if (!empty($content['content_top'])): ?>
     <div role="content" class="content-top">
-      <?php print render($content['content_top']); ?>
+      <div class="container">
+        <?php print render($content['content_top']); ?>
+      </div>
     </div>
   <?php endif; ?>
 
   <?php if (!empty($content['content'])): ?>
-    <div role="content" class="main-content container">
+    <div role="content" class="main-content">
       <?php print render($content['content']); ?>
     </div>
   <?php endif; ?>
 
   <?php if (!empty($content['closure'])): ?>
-    <footer class="closure" role="footer">
-      <div class="container">
+    <footer role="footer">
+      <div class="closure">
         <?php print render($content['closure']); ?>
       </div>
     </footer>
