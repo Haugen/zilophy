@@ -77,6 +77,10 @@
   padding: 10px;
 }
 
+article.narrow .container {
+  max-width: 700px;
+}
+
 a {
   color: @link-color;
   &:hover { color: @link-hover-color; }
@@ -89,13 +93,17 @@ body {
   font-family: @base-font;
   line-height: 1.5em;
   background-color: @white;
-  padding-top: 100px;
+  padding-top: 0px;
 }
 
 img {
   max-width: 100%;
   display: block;
   height: auto;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
 }
 
 h1,
@@ -135,14 +143,24 @@ strong {
 
 .main-content {
   .content-top {
+    position: relative;
+    z-index: 1;
+    padding: 20px 0;
     background: @kntntGreen;
+    .box-shadow(@lightgrey 0 0 0 2px);
     section {
       .container;
+      z-index: 3;
       color: @white;
+      z-index: 1;
+    }
+    .tabs {
+      z-index: 1000;
     }
   }
   .content {
     .container;
+    margin-top: 20px;
   }
 }
 
@@ -307,13 +325,22 @@ header[role="banner"] {
       .pull-left();
     }
   }
+  .navbar {
+
+    margin-bottom: 0;
+  }
   .navbar-header {
+    .make-md-column(3);
     margin-top: 10px;
+  }
+  .navigation-left {
+    .make-md-column(6);
   }
   .nav {
     .navbar-nav;
     li a {
       color: @black;
+      font-weight: bold;
     }
   }
   .sub-navigation {
@@ -327,23 +354,47 @@ header[role="banner"] {
 }
 
 .main-content {
-  padding-top: 5px;
   margin-bottom: 50px;
 }
 
 
 footer {
-  &.closure {
+  .closure {
     background-color: @darkgrey;
-    color: @lightgrey;
+    color: @white;
     padding: 50px 0;
     .container {
       text-align: center;
     }
   }
-  &.closure-bottom {
+  a {
+    color: @lightgrey;
+    text-decoration: underline;
+  }
+
+  .footer-container, footer-bottom-container {
+    .make-row();
+  }
+  .footer-info {
+    .make-md-column(3);
+  }
+  .footer-bottom-container {
+    text-align: left;
+    .left, .right {
+      .make-xs-column(6);
+    }
+  }
+
+  .container .footer-bottom-container span.left {
+    text-align: left;
+  }
+  .container .footer-bottom-container span.right {
+    text-align: right;
+  }
+
+  .closure-bottom {
     background-color: @darkergrey;
-    color: @grey;
+    color: @lightgrey;
     padding: 30px 0;
     .container {
       span {
@@ -355,10 +406,6 @@ footer {
         }
         &:nth-child(2) {
           white-space: nowrap;
-        }
-        a {
-          color: @lightgrey;
-          text-decoration: underline;
         }
       }
     }
@@ -387,9 +434,18 @@ ul.tabs {
 .field-name-field-konzilo-lead {
   margin-bottom: 20px;
   font-weight: bold;
-  font-style: italic;
   font-size: 1.1em;
   letter-spacing: 2px;
+}
+
+.content-top .field-name-field-konzilo-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  overflow: hidden;
+  max-height: 300px;
 }
 
 .twocolumns {
@@ -414,19 +470,15 @@ ul.tabs {
 }
 
 .item {
-  .box;
   .content-inline-text {
     margin-bottom: 10px;
   }
 }
 
-.view-empty {
-  .box;
+.view-konzilo-article h2 a {
+  color: @black;
 }
 
-.unmanaged {
-  .box;
-}
 
 // Forms
 .form-required {
