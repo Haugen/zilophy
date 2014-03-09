@@ -8,7 +8,7 @@
 
 <div id="page">
   <header role="banner">
-    <nav class="navbar navbar-fixed-top navbar-default">
+    <nav class="navbar navbar navbar-default">
       <div class="container">
       <?php if (!empty($content['branding_left'])): ?>
         <div class="navbar-header">
@@ -53,17 +53,19 @@
 
   <?php if (!empty($content['closure'])): ?>
     <footer role="footer">
-      <div class="closure">
+  <div class="closure">
+    <div class="container">
         <?php print render($content['closure']); ?>
-      </div>
-    </footer>
-  <?php endif; ?>
+  </div>
+  </div>
 
-  <?php if (!empty($content['closure_bottom'])): ?>
-    <footer class="closure-bottom" role="footer">
+    <?php if (!empty($content['closure_bottom'])): ?>
+    <div class="closure-bottom" role="footer">
       <div class="container">
         <?php print render($content['closure_bottom']); ?>
       </div>
-    </footer>
+
+<?php endif; ?>
+  </footer>
   <?php endif; ?>
 </div>

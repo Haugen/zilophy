@@ -22,7 +22,7 @@
   }
   if (!empty($wrapper)) print implode(' ', $wrapper) . '>';
 ?>
-<article class="narrow">
+<article class="wide">
 <?php if (!empty($content['content_top'])) : ?>
   <div class="content-top">
     <section class="top container">
