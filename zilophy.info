@@ -11,12 +11,12 @@ stylesheets[screen][] = css/main.css
 ; Javascripts
 scripts[] = ../../libraries/flexslider/jquery.flexslider.js
 scripts[] = js/zilophy.flexslider.js
+scripts[] = js/navigation.toggle.js
 
 ; Stylesheets for exclusion
-;stylesheets[all][] = modules/filter/filter.css
-;stylesheets[all][] = modules/system/system.menus.css
-;stylesheets[all][] = modules/system/system.theme.css
-;stylesheets[all][] = profiles/fst/modules/contrib/views/css/views.css
+stylesheets[all][] = modules/filter/filter.css
+stylesheets[all][] = modules/system/system.menus.css
+stylesheets[all][] = modules/system/system.theme.css
 
 ; Panels settings
 api[panels][styles][version] = 3

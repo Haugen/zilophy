@@ -1,0 +1,68 @@
+/* Site Template */
+.branding {
+  .container;
+  .branding-left {
+    .make-md-column(8);
+  }
+  .branding-right {
+    .make-md-column(4);
+  }
+  .sub-navigation {
+    .make-row();
+  }
+}
+
+.main-content {
+  .content-top {
+    position: relative;
+    z-index: 1;
+    padding: 20px 0;
+    background: @kntntGreen;
+    .box-shadow(@lightgrey 0 0 0 2px);
+    section {
+      .container;
+      z-index: 3;
+      color: @white;
+      z-index: 1;
+    }
+  }
+  .content {
+    .container;
+    margin-top: 20px;
+  }
+}
+
+.unmanaged {
+  .main-content {
+    margin-top: 20px;
+    .container {
+      max-width: 700px;
+    }
+  }
+  .content-top {
+    .container {
+      padding-top: 20px;
+      max-width: 700px;
+    }
+    background: @kntntGreen;
+    color: @white;
+  }
+  .main-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+  }
+}
+
+.layout-twocol {
+  .container;
+  .content {
+    max-width: 700px;
+    .make-md-column(8);
+  }
+  .sidebar {
+    .make-md-column(4);
+  }
+}

@@ -20,6 +20,7 @@
 @import "navbar.less";
 @import "utilities.less";
 
+@import "pagination.less";
 // Font variables
 @base-font:               'Open Sans', sans-serif;
 @headings-font-family:    @base-font;
@@ -70,7 +71,9 @@
 
 @navbar-default-link-color: @black;
 @navbar-default-link-active-color: @black;
+@navbar-default-link-hover-bg: @white;
 
+@import "layouts.less";
 .box {
   background: @white;
   box-shadow: 0 0 5px @lightgrey;
@@ -93,7 +96,6 @@ body {
   font-family: @base-font;
   line-height: 1.5em;
   background-color: @white;
-  padding-top: 0px;
 }
 
 img {
@@ -128,43 +130,7 @@ strong {
 }
 
 /* Layout */
-.branding {
-  .container;
-  .branding-left {
-    .make-md-column(8);
-  }
-  .branding-right {
-    .make-md-column(4);
-  }
-  .sub-navigation {
-    .make-row();
-  }
-}
 
-.main-content {
-  .content-top {
-    position: relative;
-    z-index: 1;
-    padding: 20px 0;
-    background: @kntntGreen;
-    .box-shadow(@lightgrey 0 0 0 2px);
-    section {
-      .container;
-      z-index: 3;
-      color: @white;
-      z-index: 1;
-    }
-    .tabs {
-      z-index: 1000;
-    }
-  }
-  .content {
-    .container;
-    margin-top: 20px;
-  }
-}
-
-// Content inline text layout
 .content-inline-text {
    position: relative;
    .main {
@@ -326,14 +292,13 @@ header[role="banner"] {
     }
   }
   .navbar {
-
+    .box-shadow(0 1px 1px rgba(0,0,0,.2));
     margin-bottom: 0;
   }
   .navbar-header {
-    .make-md-column(3);
     margin-top: 10px;
   }
-  .navigation-left {
+  .navigation-left{
     .make-md-column(6);
   }
   .nav {
@@ -347,7 +312,6 @@ header[role="banner"] {
     display: none;
     padding: 20px 0;
     text-align: center;
-    #gradient.horizontal(#f0f0f0, #d6d6d6);
     .box-shadow(@lightgrey 0 0 2px);
     .box-shadow(@lightgrey 0 0 2px);
   }
@@ -376,6 +340,10 @@ footer {
     .make-row();
   }
   .footer-info {
+    img {
+      margin: 0 auto;
+    }
+    margin-bottom: 20px;
     .make-md-column(3);
   }
   .footer-bottom-container {
@@ -413,21 +381,9 @@ footer {
 }
 
 ul.tabs {
-  border: none;
-  margin-bottom: 10px;
-  &.primary {
-    padding: 0;
-    margin-left: 1px;
-  }
-  li {
-    padding: 0;
-    &.active a {
-      .btn;
-    }
-    a {
-      .btn;
-    }
-  }
+  .nav;
+  .nav-tabs;
+  margin-bottom: 20px;
 }
 
 // Article stuff
@@ -492,22 +448,24 @@ label {
 
 input[type="text"],
 input[type="password"] {
-  display: block;
-  height: 20px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #555;
-  vertical-align: middle;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-  margin: 0;
+  .form-control;
 }
 
 input[type="submit"] {
   .btn;
   .btn-primary;
+}
+
+.pager {
+  .pagination;
+  li.pager-current {
+    position: relative;
+    float: left; // Collapse white-space
+    padding: @padding-base-vertical @padding-base-horizontal;
+    line-height: @line-height-base;
+    text-decoration: none;
+    background-color: @pagination-bg;
+    border: 1px solid @pagination-border;
+    margin-left: -1px;
+  }
 }
