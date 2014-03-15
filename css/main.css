@@ -3314,6 +3314,7 @@ a:visited {
 }
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
   line-height: 1.5em;
   background-color: #ffffff;
 }
@@ -3342,7 +3343,7 @@ h6 {
   margin-bottom: 10px;
 }
 p {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 strong {
   font-weight: bold;
@@ -3506,6 +3507,9 @@ header[role="banner"] .navbar {
 }
 header[role="banner"] .navbar-header {
   margin-top: 10px;
+}
+header[role="banner"] .navbar-toggle {
+  margin-top: 5px;
 }
 header[role="banner"] .navigation-left {
   position: relative;
