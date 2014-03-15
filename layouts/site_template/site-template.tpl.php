@@ -12,6 +12,12 @@
       <div class="container">
       <?php if (!empty($content['branding_left'])): ?>
         <div class="navbar-header">
+        <button type="button" class="navbar-toggle">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
           <?php print render($content['branding_left']); ?>
         </div>
       <?php endif; ?>
