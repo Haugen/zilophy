@@ -3391,7 +3391,6 @@ strong {
 }
 .author-content .image img {
   width: 100%;
-  border-radius: 100%;
 }
 .author-content .description {
   color: #111111;
@@ -3429,7 +3428,6 @@ strong {
   }
   .author-content .image img {
     width: 100%;
-    border-radius: 100%;
   }
   .author-content .description {
     float: left;
